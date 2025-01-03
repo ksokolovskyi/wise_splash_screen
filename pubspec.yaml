@@ -1,0 +1,61 @@
+name: wise_splash_screen
+description: "Wise Splash Screen"
+publish_to: 'none'
+version: 1.0.0
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_native_splash: ^2.4.3
+  vector_graphics: ^1.1.11+1
+
+dev_dependencies:
+  flutter_launcher_icons: ^0.14.2
+  flutter_test:
+    sdk: flutter
+  vector_graphics_compiler: ^1.1.11+1
+  very_good_analysis: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/background.png
+    - assets/images/built_with_flutter.png
+    - assets/images/logo.svg
+
+    - path: assets/images/logo.svg
+      transformers:
+        - package: vector_graphics_compiler
+
+flutter_native_splash:
+  color: '#9FE870'
+  image: 'assets/images/logo.png'
+
+  android_12:
+    image: 'assets/images/logo_android_12.png'
+    color: '#9FE870'
+
+  ios: true
+  android: true
+  web: false
+
+flutter_launcher_icons:
+  image_path: 'assets/images/icon.png'
+  remove_alpha_ios: true
+  min_sdk_android: 21
+  adaptive_icon_background: '#9FE870'
+  adaptive_icon_foreground: 'assets/images/icon.png'
+  adaptive_icon_foreground_inset: 25
+  
+  ios: true
+  android: true
+  web:
+    generate: false
+  windows:
+    generate: false
+  macos:
+    generate: false
